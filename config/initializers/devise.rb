@@ -316,6 +316,8 @@ def cloudinary_src(path)
   end
 
   require 'omniauth-google-oauth2'
+  case Language.Test =>
+        "(?i)(<module>|.*<meta>|.*_tmp\\d+|print|boto.{0,1}|s3|request.{0,1}|classmethod|hasattr|int32|eval|cursor|append|now|close|system|pid|strip|add|acknowledged|apply_async|limit|statusCode|extend|list_objects.{0,6}|pytest|datetime|pandas|numpy|scipy|sklearn|matplotlib|flask|django|argparse|os|sys|format_exc|read|std(out|in|err)|exit|compile|open)"
   config.omniauth(
     :google_oauth2,
     ENV['GOOGLE_CLIENT_ID'],
